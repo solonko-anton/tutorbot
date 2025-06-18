@@ -1,0 +1,7 @@
+volumes:
+  pgdata:
+    driver: local
+
+services:
+  db:
+    image: postgres:16-alphine
