@@ -9,5 +9,6 @@ class Settings(BaseSettings):
 
     def get_webhook_url(self) -> str:
         return f"{self.BASE_SITE}/webhook"
-    
+
+
 settings = Settings()
