@@ -19,6 +19,8 @@ jobs:
 
       - name: Deploy via SSH
         run: |
+          echo "SSH user: ${{ secrets.EC2_USER }}"
+          echo "SSH host: ${{ secrets.EC2_HOST }}"
           ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             cd /home/ubuntu/
             git pull origin main
