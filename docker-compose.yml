@@ -23,3 +23,5 @@ services:
     restart: unless-stopped
     volumes:
       - .:/code
+    depends_on:
+      - postgres

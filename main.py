@@ -21,7 +21,9 @@ async def lifespan(app: FastAPI):
     await bot.delete_webhook()
     await bot.session.close()
 
+
 app = FastAPI(lifespan=lifespan)
+
 
 @app.post("/webhook")
 async def webhook(request: Request) -> None:
@@ -30,4 +32,3 @@ async def webhook(request: Request) -> None:
     update = Update(**raw_update)
 
     await dp.feed_update(bot, update)
-
