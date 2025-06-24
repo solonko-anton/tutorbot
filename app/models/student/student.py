@@ -2,6 +2,6 @@ from sqlmodel import SQLModel, Field, Relationship
 
 
 class Student(SQLModel, table=True):
-    pass
+    id: int | None = Field(default=None, primary_key=True)
 
 
