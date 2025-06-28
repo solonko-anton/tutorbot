@@ -24,4 +24,5 @@ jobs:
             git pull origin main || { echo "Git pull failed"; exit 1; }
             docker compose down || { echo "Docker compose down failed"; exit 1; }
             docker compose up -d --build || { echo "Docker compose up failed"; exit 1; }
+            docker system prune -f || { echo "Docker prune failed"; exit; }
           '
