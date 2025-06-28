@@ -1,4 +1,5 @@
 from sqlmodel import SQLModel, Field, Relationship
+from app.models.user import User
 
 
 class TeacherDirectionLink(SQLModel, table=True):
@@ -21,10 +22,7 @@ class TeacherLessonsLink(SQLModel, table=True):
 
 class Teacher(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
-    tg_id: int = Field()
-    name: str = Field()
-    surname: str = Field()
-    patronymic: str = Field()
+    user_id: int | None = Field(foreign_key="user.id")
     verified: bool = Field()
     city: str = Field()
     years_expirience: float = Field()
