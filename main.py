@@ -5,7 +5,7 @@ from aiogram.types import Update
 from app.config.config import settings
 from app.ui.start import user_router
 from contextlib import asynccontextmanager
-import app.utils.callbacks.role
+import app.callbacks.enter_data
 
 
 @asynccontextmanager
@@ -28,7 +28,6 @@ app = FastAPI(lifespan=lifespan)
 @app.post("/webhook")
 async def webhook(request: Request) -> None:
     raw_update = await request.json()
-    print(raw_update)
     update = Update(**raw_update)
 
     await dp.feed_update(bot, update)
