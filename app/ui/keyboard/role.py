@@ -6,7 +6,7 @@ def get_role_choice_keyboard() -> types.InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
 
     builder.add(
-        types.InlineKeyboardButton(text="Учень", callback_data="role_student"),
-        types.InlineKeyboardButton(text="Вчитель", callback_data="role_teacher"),
+        types.InlineKeyboardButton(text="Student", callback_data="role_student"),
+        types.InlineKeyboardButton(text="Teacher", callback_data="role_teacher"),
     )
     return builder.as_markup()
