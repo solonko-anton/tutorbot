@@ -3,7 +3,8 @@ from fastapi import FastAPI, Request
 from app.bot import bot, dp
 from aiogram.types import Update
 from app.config.config import settings
-from app.ui.start import user_router
+from app.ui.user_router import user_router
+from app.utils.fsm.user_states import registration_router
 from contextlib import asynccontextmanager
 import app.callbacks.enter_data
 
@@ -11,7 +12,8 @@ import app.callbacks.enter_data
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     webhook_url = settings.get_webhook_url()
-    dp.include_router(user_router)
+    dp.include_routers(user_router,
+                       registration_router)
     await bot.set_webhook(
         url=webhook_url,
         allowed_updates=None,
