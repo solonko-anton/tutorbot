@@ -11,4 +11,4 @@ def enter_student_data() -> types.ReplyKeyboardMarkup:
             request_contact=True,
         )
     )
-    return builder.as_markup()
+    return builder.as_markup(one_time_keyboard=True, resize_keyboard=True)
