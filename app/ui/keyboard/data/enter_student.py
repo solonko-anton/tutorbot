@@ -1,5 +1,6 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 from aiogram import types
+from aiogram.utils.i18n import gettext as _
 
 
 def enter_student_data() -> types.ReplyKeyboardMarkup:
@@ -7,7 +8,7 @@ def enter_student_data() -> types.ReplyKeyboardMarkup:
 
     builder.add(
         types.KeyboardButton(
-            text="Register",
+            text=_("Share phone number"),
             request_contact=True,
         )
     )

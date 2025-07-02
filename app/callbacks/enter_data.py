@@ -4,10 +4,7 @@ from app.ui.keyboard.data.enter_student import enter_student_data
 
 @user_router.callback_query(F.data == "role_student")
 async def handle_student_data(callback: types.CallbackQuery):
-    await callback.message.answer(
-        text="Share number",
-        reply_markup=enter_student_data()
-    )
+    pass
 
 
 @user_router.callback_query(F.data == "role_teacher")

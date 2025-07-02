@@ -10,3 +10,4 @@ class User(SQLModel, table=True):
     phone: str = Field()
     patronymic: str = Field()
     country: str = Field()
+    city: str = Field()

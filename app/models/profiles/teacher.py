@@ -24,7 +24,6 @@ class Teacher(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     user_id: int | None = Field(foreign_key="user.id")
     verified: bool = Field()
-    city: str = Field()
     years_expirience: float = Field()
     description: str = Field(max_length=255)
 
