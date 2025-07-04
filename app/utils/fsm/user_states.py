@@ -18,15 +18,16 @@ class User(StatesGroup):
 
 registration_router = Router()
 
+
 @registration_router.message(CommandStart())
 async def handle_number(message: types.Message, state: FSMContext):
     await state.clear()
     await state.set_state(User.number)
     async with ChatActionSender.typing(bot=bot, chat_id=message.chat.id):
         await message.answer(
-            text=_("Enter your phone number"),
-            reply_markup=enter_student_data()
+            text=_("Enter your phone number"), reply_markup=enter_student_data()
         )
+
 
 @registration_router.message(User.number, F.contact)
 async def handle_first_name(message: types.Message, state: FSMContext):
@@ -37,23 +38,19 @@ async def handle_first_name(message: types.Message, state: FSMContext):
     await state.update_data(number=number)
     await state.set_state(User.first_name)
     async with ChatActionSender.typing(bot=bot, chat_id=message.chat.id):
-        await message.answer(
-            text=_("Enter your first name")
-        )
+        await message.answer(text=_("Enter your first name"))
+
 
 @registration_router.message(User.first_name, F.text)
 async def handle_last_name(message: types.Message, state: FSMContext):
-
     await state.update_data(last_name=message.text)
     await state.set_state(User.last_name)
     async with ChatActionSender.typing(bot=bot, chat_id=message.chat.id):
-        await message.answer(
-            text=_("Enter your last name")
-        )
+        await message.answer(text=_("Enter your last name"))
+
 
 @registration_router.message(User.last_name, F.text)
 async def handle_patronymic(message: types.Message, state: FSMContext):
-
     await state.update_data(patronymic=message.text)
     await state.set_state(User.patronymic)
     async with ChatActionSender.typing(bot=bot, chat_id=message.chat.id):
@@ -61,11 +58,10 @@ async def handle_patronymic(message: types.Message, state: FSMContext):
             text=_("Enter your patronymic"),
         )
 
+
 @registration_router.message(User.patronymic, F.text)
 async def handle_role(message: types.Message):
     await message.answer(
-        text=_("Choose your role"),
+        text=_("Choose your role: "),
         reply_markup=get_role_choice_keyboard(),
     )
-
-
