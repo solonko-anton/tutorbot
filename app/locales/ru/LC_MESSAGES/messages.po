@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-30 19:54+0000\n"
+"POT-Creation-Date: 2025-07-02 08:00+0000\n"
 "PO-Revision-Date: 2025-06-30 19:54+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -19,19 +19,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
 
-#: utils/fsm/user_states.py:26
-msgid "Enter your phone number"
-msgstr "Введите номер телефона"
+#: ui/keyboard/role.py:10
+msgid "Student"
+msgstr ""
 
-#: utils/fsm/user_states.py:40
+#: ui/keyboard/role.py:11
+msgid "Teacher"
+msgstr ""
+
+#: ui/keyboard/data/enter_student.py:11
+#, fuzzy
+msgid "Share phone number"
+msgstr ""
+
+#: utils/fsm/user_states.py:28
+msgid "Enter your phone number"
+msgstr ""
+
+#: utils/fsm/user_states.py:41
 msgid "Enter your first name"
 msgstr ""
 
-#: utils/fsm/user_states.py:50
+#: utils/fsm/user_states.py:49
 msgid "Enter your last name"
 msgstr ""
 
-#: utils/fsm/user_states.py:60
+#: utils/fsm/user_states.py:58
 msgid "Enter your patronymic"
+msgstr ""
+
+#: utils/fsm/user_states.py:65
+msgid "Choose your role"
 msgstr ""
 
