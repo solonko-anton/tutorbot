@@ -8,7 +8,7 @@ def enter_student_data() -> types.ReplyKeyboardMarkup:
 
     builder.add(
         types.KeyboardButton(
-            text=_("Share phone number"),
+            text=_("Share contacts"),
             request_contact=True,
         )
     )
